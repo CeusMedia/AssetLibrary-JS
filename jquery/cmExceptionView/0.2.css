@@ -1,0 +1,94 @@
+dl.exception {
+	clear: left;
+	}
+dl.exception.panel {
+	border: 2px solid gray;
+	background-color: #EFEFEF;
+	padding: 1em 2em;
+	border-radius: 1em;
+	box-shadow: 4px 4px 4px rgba(0,0,0,0.3);
+	}
+dl.exception,
+dl.exception dl {
+	margin: 0px;
+	padding: 0px;
+	}
+dl.exception dl.exception {
+	margin-left: 1em;
+	}
+dl.exception dt,
+dl.exception dd {
+	font-family: monospace;
+	line-height: 1.5em;
+	font-size: 12px;
+	}
+dl.exception dt {
+	clear: left;
+	font-weight: bold;
+	float: left;
+	padding-right: 1em;
+	}
+dl.exception>dt {
+	min-width: 5em;
+	min-height: 1.5em;
+	}
+dl.exception dd {
+	font-weight: normal;
+	display: block;
+	min-height: 1.5em;
+	}
+dl.exception dd ol.trace {
+	padding: 0px;
+	margin: 0px;
+	margin-left: 5em;
+	}
+dl.exception dd ol.trace li{
+	list-style-position: inside;
+	}
+dl.exception dd blockquote {
+	margin: 0em 0.15em;
+	border-left: 2px solid #DDD;
+	padding-left: 1.5em;
+	}
+dl.exception dd blockquote span.type {
+	font-style: italic;
+	font-weight: normal;
+	color: gray;
+	}
+
+
+
+dl.exception ol.trace li span.path {
+	}
+dl.exception ol.trace li span.path-short {
+	padding-right: 0.5em;
+	}
+dl.exception ol.trace li span.path-short a {
+	padding-right: 0.25em;
+	}
+dl.exception ol.trace li span.file {
+	color: black;
+	font-size: 1.1em:
+	margin-right: 0.5em;
+	font-weight: bold;
+	}
+dl.exception ol.trace li span.ext,
+dl.exception dd.exception-file span.ext {
+	color: gray;
+	font-size: 0.8em;
+	}
+dl.exception ol.trace li span.line {
+	padding-left: 0.5em;
+	}
+	
+dl.exception ol.trace li span.class {
+	text-decoration: underline;
+	}
+dl.exception ol.trace li span.type {
+	padding: 0em 0.5em;
+	}
+dl.exception ol.trace li span.func {
+	background-color: #EFEFEF;
+	}
+dl.exception ol.trace li span.args {
+	}

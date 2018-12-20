@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <title>cmServiceIndex Demo</title>
+    <link rel="stylesheet" href="//css.ceusmedia.com/blueprint/reset.css"/>
+    <link rel="stylesheet" href="//css.ceusmedia.com/blueprint/typography.css"/>
+    <link rel="stylesheet" href="tool.css"/>
+    <link rel="stylesheet" href="services.index.filter.css"/>
+    <link rel="stylesheet" href="services.index.table.css"/>
+
+    <script src="//js.ceusmedia.com/jquery/1.2.3.pack.js"></script>
+    <script src="//js.ceusmedia.com/jquery/color.js"></script>
+    <script src="jquery.cmServiceIndex.js"></script>
+    <script src="//js.ceusmedia.com/jquery/cmBlitz.js"></script>
+  </head>
+  <body class="index">
+
+    <div id="container">
+      <h1>cmServiceIndex Demo</h1>
+
+      <!--  FILTER  -->
+      <div id="filter">
+        <h3><acronym title="Filters will apply immediately">Filters and Options</acronym></h3>
+
+        <ul>
+          <li>
+            <label for="filter_search"><acronym title="case senstive">Search</acronym></label>
+            <input id="filter_search" autocomplete="off"/>
+          </li>
+          <li>
+            <label for="filter_format"><acronym title="show services with a specific response format">Format</acronym></label>
+            <select id="filter_format"><option value=""> -- all -- </option><option>atom</option><option>json</option><option>php</option><option>rss</option><option>txt</option><option>wddx</option><option>xml</option></select>
+
+          </li>
+          <li>
+            <input id="filter_classes" type="checkbox"/>
+            <label for="filter_classes"><acronym title="show names of classes implementing services">show&nbsp;Classes</acronym></label>
+          </li>
+          <li>
+            <input id="filter_rules" type="checkbox"/>
+            <label for="filter_rules"><acronym title="show service parameter rules">show&nbsp;Rules</acronym></label>
+
+          </li>
+        <div style="clear: both"></div>
+        </ul>
+      </div>
+
+      <!--  INFORMATION  -->
+      <br/>
+      <p>
+
+        <h3>This a demo for the jQuery plugin <em>cmServiceIndex</em>, only.</h3>
+
+		Please play around with the filters/search to the right.<br/>
+		Every change there should effect the listed services.<br/>
+		<br/>
+        Note that all links are disabled.<br/>
+      </p>
+      <br/>
+
+      <!--  LIST  -->
+      <div id="list">
+        <h2>Net Services List <small>(<span id="serviceCounter"></span>)</small></h2>
+        <table class='services list'><colgroup><col width='35%'/><col width='30%'/><col width='5%'/><col width='5%'/><col width='5%'/><col width='5%'/><col width='5%'/><col width='5%'/><col width='5%'/></colgroup><thead><tr><th>Service</th><th>Parameter</th><th><a href='#' class"format">ATOM</a></th><th><a href='#' class="format">JSON</a></th><th><a href='#' class="format">PHP</a></th><th><a href='#' class="format">RSS</a></th><th><a href='#' class="format">TXT</a></th><th><a href='#' class="format">WDDX</a></th><th><a href='#' class="format">XML</a></th></tr></thead><tbody><tr class="service json php txt wddx xml"><td class="service"><div class="className">Services_Public</div><div class="serviceName"><a href="#"><span class="linkTest" title="Test this service"/></a><a href="#" title="Run this service">addIntegers</a></div><div class="description">Adds two Integers.</div></td><td class="parameter"><div class="rules"><span class="key">mandatory:</span> <span class="value">yes</span>, <span class="key">type:</span> <span class="value">int</span>, <span class="key">preg:</span> <span class="value">/^[0-9]+$/</span>, <span class="key">filters:</span> <span class="value"></span></div><small><em>int</em></small>&nbsp;<acronym title="first integer">a</acronym><br/><div class="rules"><span class="key">mandatory:</span> <span class="value">yes</span>, <span class="key">type:</span> <span class="value">int</span>, <span class="key">preg:</span> <span class="value">/^[0-9]+$/</span>, <span class="key">filters:</span> <span class="value"></span></div><small><em>int</em></small>&nbsp;<acronym title="second integer">b</acronym></td><td class='no'>-</td><td class='yes'><span class='json'>+</span></td><td class='yes'><span class='php'>+</span></td><td class='no'>-</td><td class='preferred'><span class='txt'>+</span></td><td class='yes'><span class='wddx'>+</span></td><td class='yes'><span class='xml'>+</span></td></tr><tr class="service json php wddx xml"><td class="service"><div class="className">Services_Public</div><div class="serviceName"><a href="#"><span class="linkTest" title="Test this service"/></a><a href="#" title="Run this service">getArray</a></div><div class="description">Returns current Timestamp on Server.</div></td><td class="parameter"></td><td class='no'>-</td><td class='yes'><span class='json'>+</span></td><td class='preferred'><span class='php'>+</span></td><td class='no'>-</td><td class='no'>-</td><td class='yes'><span class='wddx'>+</span></td><td class='yes'><span class='xml'>+</span></td></tr><tr class="service json php wddx xml"><td class="service"><div class="className">Services_Public</div><div class="serviceName"><a href="#"><span class="linkTest" title="Test this service"/></a><a href="#" title="Run this service">getClassList</a></div><div class="description">Returns List of imported Classes.</div></td><td class="parameter"></td><td class='no'>-</td><td class='yes'><span class='json'>+</span></td><td class='preferred'><span class='php'>+</span></td><td class='no'>-</td><td class='no'>-</td><td class='yes'><span class='wddx'>+</span></td><td class='yes'><span class='xml'>+</span></td></tr><tr class="service json php txt wddx xml"><td class="service"><div class="className">Services_Public</div><div class="serviceName"><a href="#"><span class="linkTest" title="Test this service"/></a><a href="#" title="Run this service">getTestException</a></div><div class="description">Returns current Timestamp on Server.</div></td><td class="parameter"><div class="rules"><span class="key">mandatory:</span> <span class="value">no</span>, <span class="key">type:</span> <span class="value">bool</span>, <span class="key">preg:</span> <span class="value"></span>, <span class="key">filters:</span> <span class="value"></span></div>[<small><em>bool</em></small>&nbsp;<acronym title="Flag: throw Exception, otherwise respond encoded Exception">throw</acronym>]</td><td class='no'>-</td><td class='yes'><span class='json'>+</span></td><td class='preferred'><span class='php'>+</span></td><td class='no'>-</td><td class='yes'><span class='txt'>+</span></td><td class='yes'><span class='wddx'>+</span></td><td class='yes'><span class='xml'>+</span></td></tr><tr class="service json php txt wddx xml"><td class="service"><div class="className">Services_Public</div><div class="serviceName"><a href="#"><span class="linkTest" title="Test this service"/></a><a href="#" title="Run this service">getTimestamp</a></div><div class="description">Returns current Timestamp on Server.</div></td><td class="parameter"><div class="rules"><span class="key">mandatory:</span> <span class="value">no</span>, <span class="key">type:</span> <span class="value">string</span>, <span class="key">preg:</span> <span class="value">@^([a-z_ .:-]+)?$@i</span>, <span class="key">filters:</span> <span class="value"></span></div>[<small><em>string</em></small>&nbsp;<acronym title="PHP Date Format, see http://www.php.net/date">output</acronym>]</td><td class='no'>-</td><td class='yes'><span class='json'>+</span></td><td class='yes'><span class='php'>+</span></td><td class='no'>-</td><td class='preferred'><span class='txt'>+</span></td><td class='yes'><span class='wddx'>+</span></td><td class='yes'><span class='xml'>+</span></td></tr><tr class="service json php txt wddx xml"><td class="service"><div class="className">Services_Public</div><div class="serviceName"><a href="#"><span class="linkTest" title="Test this service"/></a><a href="#" title="Run this service">reflectInput</a></div><div class="description">Returns given String filtering all JavaScripts.</div></td><td class="parameter"><div class="rules"><span class="key">mandatory:</span> <span class="value">yes</span>, <span class="key">type:</span> <span class="value">string</span>, <span class="key">preg:</span> <span class="value"></span>, <span class="key">filters:</span> <span class="value">decodeBase64</span></div><small><em>string</em></small>&nbsp;decodeBase64( <acronym title="Encode Base64">encodeBase64</acronym>( <acronym title="Testing...">test</acronym>( <acronym title="String to be reflected by Server, HTML allowed, JavaScript not allowed.">input</acronym> ) ) )</td><td class='no'>-</td><td class='yes'><span class='json'>+</span></td><td class='yes'><span class='php'>+</span></td><td class='no'>-</td><td class='preferred'><span class='txt'>+</span></td><td class='yes'><span class='wddx'>+</span></td><td class='yes'><span class='xml'>+</span></td></tr></tbody></table>
+
+        <div id="message">No Services found.</div>
+      </div>
+
+    </div>
+    <script>
+$(document).ready(function(){
+  var indexFilter = $(document).cmServiceIndex({
+    searchDelay: 200,
+    useBlitz: true
+  });
+});
+$("#search").focus();
+    </script>
+  </body>
+</html>

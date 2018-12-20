@@ -1,0 +1,20 @@
+.messageBox {
+	border: 2px solid black;
+	background: #EEE;
+	width: 250px;
+	position: fixed;
+	right: 10px;
+	bottom: 0px;
+	display: none;
+	z-index: 9999;
+	}
+.messageBox>.messageBoxHeading {
+	border-bottom: 1px solid gray;
+	background: #EEE;
+	padding: 5px 10px;
+	font-weight: bold;
+	}
+.messageBox>.messageBoxContent {
+	background: #FFF;
+	padding: 5px 10px;
+	}

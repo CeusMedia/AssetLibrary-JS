@@ -1,0 +1,14 @@
+/*  --  COLLAPSE PANEL  --  */
+.panel.collapsable.apple .panelHead,
+.panel.collapsable.apple .panelFoot,
+.panel.collapsable.apple .panelHead .panelHeadInner,
+.panel.collapsable.apple .panelFoot .panelFootInner {
+	background-image:url(images/back_2_signed.png);
+	background-repeat: no-repeat;
+	}
+.panel.collapsable.apple.collapsed .panelHead,
+.panel.collapsable.apple.collapsed .panelFoot,
+.panel.collapsable.apple.collapsed .panelHead .panelHeadInner,
+.panel.collapsable.apple.collapsed .panelFoot .panelFootInner {
+	background-image:url(images/back_1_signed.png);
+	}

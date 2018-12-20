@@ -1,0 +1,35 @@
+/*  --  THEME: default  --  */
+.cmMessenger.default ul {
+	margin: 0em 0em 1em 0em;
+	padding: 0px;
+	border-bottom: 1px solid gray;
+	list-style:none;
+	}
+
+.cmMessenger.default ul li div {
+	padding: 0.5em 1em 0.5em 3em;
+	background-repeat: no-repeat;
+	background-position: 0.9em 0.6em;
+	font-size: 1.1em;
+	}
+
+.cmMessenger.default ul li.failure div {
+	background-color: #DDD;
+	background-color: #FBA;
+	background-image: url(//icons.ceusmedia.com/famfamfam/silk/cancel.png);
+	}
+.cmMessenger.default ul li.error div {
+	background-color: #FCB;
+	background-image: url(//icons.ceusmedia.com/famfamfam/silk/error.png);
+	}
+.cmMessenger.default ul li.notice div {
+	background-color: #FFD;
+	background-color: #DDD;
+	background-color: #EEE;
+	background-color: #FFC;
+	background-image: url(//icons.ceusmedia.com/famfamfam/silk/information.png);
+	}
+.cmMessenger.default ul li.success div {
+	background-color: #DFB;
+	background-image: url(//icons.ceusmedia.com/famfamfam/silk/accept.png);
+	}

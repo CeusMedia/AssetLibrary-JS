@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>cmComboBox Demo</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="//css.ceusmedia.com/blueprint/reset.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="//css.ceusmedia.com/blueprint/typography.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="cmComboBox.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="cmComboBox.icons.css"/>
+    <!--[if IE]>
+      <link rel="stylesheet" type="text/css" media="screen" href="cmComboBox.msie.css"/>
+    <![endif]-->
+    <script type="text/javascript" src="//js.ceusmedia.com/jquery/1.3.2.min.js"></script>
+    <script type="text/javascript" src="//js.ceusmedia.com/jquery/bgiframe/2.1.pack.js"></script>
+    <script type="text/javascript" src="//js.ceusmedia.com/jquery/color.js"></script>
+    <script type="text/javascript" src="//js.ceusmedia.com/jquery/cmBlitz/0.1.js"></script>
+    <script type="text/javascript" src="//js.ceusmedia.com/jquery/easing/1.3.js"></script>
+    <script type="text/javascript" src="//js.ceusmedia.com/jquery/cmDevLog/0.1.js"></script>
+    <script type="text/javascript" src="cmComboBox.js"></script>
+    <script type="text/javascript">
+/*  --  enable cmDevLog globally  --  */
+var debug = true;
+
+/*  --  apply cmComboBoxes  --  */
+$(document).ready(function(){
+  $("#test11").cmComboBox({debug:true});
+  $("#test12").cmComboBox({debug:true});
+  $("#test2").cmComboBox({debug:true});
+});
+    </script>
+    <style>
+fieldset {
+	float: left;
+	width: 30%;
+}
+    </style>
+  </head>
+  <body style="margin: 1em">
+    <h2>cmComboBox Demo</h2>
+    <fieldset>
+      <legend>Form 1 - simple</legend>
+      <select name="old1">
+        <option></option>
+        <option>123</option>
+      </select>
+      <div id="test11" class="cmComboBox">
+        <input name="test" class="1"/>
+        <div class="trigger"></div>
+        <div class="options">
+          <ul>
+            <li class="type-folder">Item 1</li>
+            <li class="type-folder">Item 2</li>
+            <li class="type-folder">Item 3</li>
+          </ul>
+        </div>
+      </div>
+      <div id="test12" class="cmComboBox">
+        <input name="test" class="1"/>
+        <div class="trigger"></div>
+        <div class="options">
+          <ul>
+            <li class="type-folder">Item 1</li>
+            <li class="type-folder">Item 2</li>
+            <li class="type-folder">Item 3</li>
+          </ul>
+        </div>
+      </div>
+      <select name="old2"></select>
+      Hier kommt ein Text.
+      &raquo;
+    </fieldset>
+    <fieldset>
+      <legend>Form 2 - grouped</legend>
+      <div id="test2" class="cmComboBox">
+        <input name="test" class="1"/>
+        <div class="trigger"></div>
+        <div class="options">
+          <div class="heading">-- bitte wählen --</div>
+          <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+          </ul>
+          <ol>
+            <li class="type-file">Group 1</li>
+            <ul>
+              <li class="type-file">Item 11</li>
+              <li class="type-folder">Item 12</li>
+              <li class="type-flash">Item 13</li>
+            </ul>
+            <li class="type-flash">Group 2</li>
+            <ul>
+              <li class="type-folder">Item 21</li>
+              <li class="type-folder">Item 22</li>
+              <li class="type-folder">Item 23</li>
+            </ul>
+          </ol>
+        </div>
+      </div>
+  </body>
+</html>

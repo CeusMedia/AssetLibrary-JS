@@ -1,0 +1,28 @@
+.cmComboBox input.type-folder,
+.cmComboBox input.type-flash,
+.cmComboBox input.type-file {
+	background-repeat: no-repeat;
+	background-position: 1px 2px;
+	padding-left: 20px;
+	}
+
+.cmComboBox .options li.type-folder,
+.cmComboBox .options li.type-flash,
+.cmComboBox .options li.type-file {
+	background-repeat: no-repeat;
+	background-position: 1px 3px;
+	padding-left: 22px;
+	}
+
+.cmComboBox .type-file {
+	background-image: url(icons/action_stop.gif);
+	}
+.cmComboBox .type-folder {
+	background-image: url(icons/application_firefox.gif);
+	}
+.cmComboBox .type-flash{
+	background-image: url(icons/application_flash.gif);
+	}
+
+
+

@@ -1,0 +1,59 @@
+<html>
+	<head>
+		<title>cmSelectBox demo</title>
+		<script type="text/javascript" src="../../1.7.min.js"></script>
+		<script type="text/javascript" src="../0.1.js"></script>
+		<script type="text/javascript" src="../../easing/1.3.min.js"></script>
+		<link rel="stylesheet" href="http://css.ceusmedia.de/blueprint/reset.css"/>
+		<link rel="stylesheet" href="http://css.ceusmedia.de/blueprint/typography.css"/>
+		<link rel="stylesheet" href="../0.1.css"/>
+		<link rel="stylesheet" href="style.css"/>
+		<script type="text/javascript">
+$(document).ready(function(){
+	$("select.cmSelectBox").bind("change",function(){
+		$("#"+$(this).prop("id")+'-value').html($(this).val());
+//		alert("change!");
+		console.log("changed");
+	}).bind("reset",function(){
+		console.log("reset");
+	}).cmSelectBox({
+		speedIn: 150,
+		speedOut: 100,
+		easeIn: "easeOutQuad",
+		easeOut: "easeOutQuad"
+	}).each(function(){
+		$("#"+$(this).prop("id")+'-value').html($(this).val());
+	});
+});
+
+function select1(value){
+	$("#input_test2").cmSelectBox("select",[value]);
+}
+
+		</script>
+	</head>
+	<body style="margin: 2em">
+		<h2>cmSelectBox demo</h2>
+		<div>Value: <span id="input_test1-value"></span></div>
+		<form>
+			<select name="test1" id="input_test1" class="cmSelectBox m">
+				<option value="opt11" class="public">Entry 11 - One</option>
+				<option value="opt12" class="secure" selected="selected">Entry 12 - Two</option>
+				<option value="opt13">Entry 13 - Three</option>
+				<option value="opt14">Entry 14 - Four</option>
+			</select>
+			<br/>
+			<div>Value: <span id="input_test2-value"></span></div>
+			<select name="test2" id="input_test2" class="cmSelectBox l">
+				<option value=""></option>
+				<option value="opt21">Entry 21 - One</option>
+				<option value="opt22">Entry 22 - Two</option>
+				<option value="opt23">Entry 23 - Three</option>
+				<option value="opt24">Entry 24 - Four</option>
+			</select>
+			<br/>
+			<button type="button" onclick="select1('opt22');">select "22"</button>
+			<button type="reset">reset</button>
+		</form>
+	</body>
+</html>

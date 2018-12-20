@@ -1,0 +1,36 @@
+/*  --  PANEL  --  */
+.panel.default {
+	background: #FFFFFF;
+	border: 1px solid #BFBFBF;
+	}
+.panel.default .panelHead,
+.panel.default .panelContent,
+.panel.default .panelFoot {
+	width: 100%;
+	}
+.panel.default .panelHead {
+	height: 2em;
+	line-height: 1.5em;
+	background-color: #DFDFDF;
+	border-bottom: 1px solid #CFCFCF;
+	}
+.panel.default .panelHead .panelHeadInner {
+	padding-top: 3px;
+	padding-left: 10px;
+	font-size: 1.2em;
+	}
+.panel.default .panelContent {
+	background: #EFEFEF;
+	}
+.panel.default .panelContent .panelContentInner{
+	padding: 10px;
+	}
+.panel.default .panelFoot {
+	border-top: 1px solid #DFDFDF;
+	}
+.panel.default .panelFoot .panelFootInner {
+	padding-top: 0px;
+	padding-left: 10px;
+	font-size: 0.8em;
+	font-weight: lighter;
+	}

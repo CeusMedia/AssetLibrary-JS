@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>Layer Menu Demo</title>
+    <link rel="stylesheet" href="http://css.ceusmedia.com/blueprint/reset.css"/>
+    <link rel="stylesheet" href="http://css.ceusmedia.com/blueprint/typography.css"/>
+    <link rel="stylesheet" href="cmLayerMenu.css"/>
+    <script src="http://js.ceusmedia.com/jquery/1.10.2.min.js"></script>
+    <script src="http://js.ceusmedia.com/jquery/cookie.pack.js"></script>
+<!--    <script src="http://js.ceusmedia.com/jquery/dimensions/1.1.2.pack.js"></script>-->
+    <script src="http://js.ceusmedia.com/jquery/easing/1.3.js"></script>
+    <script src="http://js.ceusmedia.com/jquery/cmDevLog.js"></script>
+    <script src="cmLayerMenu.js"></script>
+    <script>
+$(document).ready(function(){
+  $.cmLayerMenu();
+});
+    </script>
+  </head>
+
+  <body style="margin: 1em">
+    <div id="container">
+      <div class="cmLayerMenu">
+        <div id="layer_root" class="stepLayer"><ul>
+  <li class="parent" onclick="stepInTo('root_0');"><span>Webseite</span></li>
+  <li class="parent" onclick="stepInTo('root_1');"><span>Forum</span></li>
+  <li><a href="?id=blog">Blog</a></li>
+
+</ul>
+</div><div id="layer_root_0" class="stepLayer nested"><ol class="back">  <li class="level0" onclick="stepOutTo('root');"><span>Übersicht</span></li></ol><ul>
+  <li class="parent" onclick="stepInTo('root_0_0');"><span>Referenzen</span></li>
+  <li class="parent" onclick="stepInTo('root_0_1');"><span>Leistungen</span></li>
+</ul>
+</div><div id="layer_root_0_0" class="stepLayer nested"><ol class="back">  <li class="level0" onclick="stepOutTo('root');"><span>Übersicht</span></li>
+  <li class="level1" onclick="stepOutTo('root_0');"><span>Webseite</span></li></ol><ul>
+
+  <li class="parent" onclick="stepInTo('root_0_0_0');"><span>Portale</span></li>
+  <li><a href="?id=referenceIndex">Referenz&uuml;bersicht</a></li>
+  <li><a href="?id=referenceTeilo">Teilo</a></li>
+</ul>
+</div><div id="layer_root_0_0_0" class="stepLayer nested"><ol class="back">  <li class="level0" onclick="stepOutTo('root');"><span>Übersicht</span></li>
+  <li class="level1" onclick="stepOutTo('root_0');"><span>Webseite</span></li>
+
+  <li class="level1" onclick="stepOutTo('root_0_0');"><span>Referenzen</span></li></ol><ul>
+  <li><a href="?id=portalIndex">Portal&uuml;bersicht</a></li>
+  <li><a href="?id=portalTeilo">Teilo</a></li>
+</ul>
+</div><div id="layer_root_0_1" class="stepLayer nested"><ol class="back">  <li class="level0" onclick="stepOutTo('root');"><span>Übersicht</span></li>
+  <li class="level1" onclick="stepOutTo('root_0');"><span>Webseite</span></li></ol><ul>
+
+  <li><a href="?id=serviceArchitecture">Architektur</a></li>
+  <li><a href="?id=serviceConsulting">Beratung</a></li>
+  <li><a href="?id=serviceEngineering">Entwicklung</a></li>
+</ul>
+</div><div id="layer_root_1" class="stepLayer nested"><ol class="back">  <li class="level0" onclick="stepOutTo('root');"><span>Übersicht</span></li></ol><ul>
+  <li><a href="?id=forumThread1">Thread 1</a></li>
+  <li><a href="?id=forumThread2">Thread 2</a></li>
+
+  <li><a href="?id=forumThread3">Thread 3</a></li>
+</ul>
+</div>
+      </div>
+    </div>
+  </body>
+</html>

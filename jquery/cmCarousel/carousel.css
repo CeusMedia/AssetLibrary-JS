@@ -1,0 +1,61 @@
+#container {
+	position: absolute;
+	top: 0px;
+	margin-left: 22px;
+	margin-right: 22px;
+	width: 400px;
+	height: 80px;
+	border-width: 1px 0px 1px 0px;
+	border-style: solid;
+	border-color: gray;
+	overflow: hidden;
+	}
+
+#container>div {
+	position: absolute;
+	display: none;
+	width: 32px;
+	height: 32px;
+	}
+
+#container>div>img,
+#container>div>a>img {
+	width: 100%;
+	height: 100%;
+	}
+
+	
+.cmCarousel-control-prev,
+.cmCarousel-control-next{
+	position: absolute;
+	top: 0px;
+	border-width: 1px; 
+	border-style: solid;
+	border-color: gray;
+	vertical-align: middle;
+	width: 20px;
+	height: 80px;
+	outline: none;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	display: table;
+	overflow: hidden;
+	text-align: center;
+	font-size: 2em;
+	}
+.cmCarousel-control-prev:hover,
+.cmCarousel-control-next:hover{
+	background-color: #BBB;
+	border-color: black;
+	}
+.cmCarousel-control-prev{
+	left: 0px;
+	}
+.cmCarousel-control-next{
+	right: 0px;
+	}
+

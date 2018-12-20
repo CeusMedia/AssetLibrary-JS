@@ -1,0 +1,17 @@
+
+img.zoomable{
+	opacity: 0.5;
+	}
+
+body {
+	padding: 1em 2em;
+	}
+
+.cmImagnifier-lense.round{
+	width: 200px;
+	height: 200px;
+	border-radius: 100px;
+	border-width: 3px;
+	border-color: rgba(0,0,0,0.75);
+	background-color: black;
+	}

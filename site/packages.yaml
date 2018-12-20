@@ -1,0 +1,87 @@
+packages:
+  jquery:
+    title:       jquery + plugins
+    subtitle:    the compact javascript framework
+    version:     "1.2.6"
+    description: ...
+    homepage:    http://jquery.com/
+    icon:        http://static.jquery.com/favicon.ico
+    download:    http://docs.jquery.com/Downloading_jQuery
+    repository:  http://jqueryjs.googlecode.com/svn/trunk
+    examples:
+    tutorials:   http://docs.jquery.com/Tutorials
+    docs:        http://docs.jquery.com/
+    mailgroup:   http://groups.google.com/group/jquery-en
+    maillist:    http://jquery.com/discuss/
+    forum:       http://jquery.com/discuss/
+    tracker:
+    sites:
+  mootools:
+    title:       mootools
+    subtitle:    the compact javascript framework
+    version:     "1.2"
+    description: ...
+    homepage:    http://mootools.net/
+    icon:        http://mootools.net/assets/icons/icon.png
+    download:    http://mootools.net/download
+    repository:  http://mootools.net/download
+    examples:    http://demos.mootools.net/
+    tutorials:  
+    docs:        http://docs.mootools.net/
+    mailgroup: 
+    maillist: 
+    forum:
+    tracker:     http://dev.mootools.net/
+    sites:
+  scriptaculous:
+    title:       script.aculo.us
+    subtitle:    it's about your interface, baby!
+    version:     "1.8.1"
+    description: script.aculo.us provides you with easy-to-use, cross-browser user interface JavaScript libraries to make your web sites and web applications fly.
+    homepage:    http://script.aculo.us/
+    icon:        http://script.aculo.us/favicon.ico
+    download:    http://script.aculo.us/downloads
+    repository:
+    examples:    http://wiki.script.aculo.us/scriptaculous/show/Demos
+    tutorials:  
+    docs:        http://wiki.script.aculo.us/
+    mailgroup: 
+    maillist: 
+    forum:
+    tracker:     http://wiki.script.aculo.us/scriptaculous/show/BugReports
+    sites:
+  jscalendar:
+    title:       jscalendar
+    subtitle:    The DHTML / JavaScript Calendar
+    version:     "1.0"
+    description: 
+    homepage:    http://www.dynarch.com/projects/calendar/
+    icon:        http://www.dynarch.com/favicon.ico
+    download:    http://sourceforge.net/project/showfiles.php?group_id=75569
+    repository:  http://sourceforge.net/cvs/?group_id=75569
+    examples:    http://www.dynarch.com/demos/jscalendar/
+    tutorials:   
+    docs:        http://www.dynarch.com/demos/jscalendar/doc/html/reference.html
+    mailgroup: 
+    maillist: 
+    forum:
+    tracker:     http://sourceforge.net/tracker/?atid=544285&group_id=75569&func=browse
+    sites:
+  prototype:
+    title:       prototype
+    subtitle:    JavaScript framework
+    version:     "1.6.0"
+    description: 
+    homepage:    http://www.prototypejs.org/
+    icon:        http://www.prototypejs.org/images/fav.png
+    download:    http://www.prototypejs.org/download
+    repository:
+    examples:
+    tutorials:   http://www.prototypejs.org/learn
+    docs:        http://www.prototypejs.org/api
+    mailgroup: 
+    maillist:    http://groups.google.com/group/prototype-core
+    forum:
+    tracker:
+    sites:
+

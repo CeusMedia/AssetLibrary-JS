@@ -1,0 +1,56 @@
+
+/*  --  CONTEXT OPTIONS  --  */
+body {
+	margin: 2em;
+	}
+.cmContextMenu {
+	position: relative;
+	width: 120px;
+	height: 20px;
+	background: #F7F7F7;
+	}
+.cmContextMenu .label {
+	padding: 1px 2px;
+	}
+
+.cmContextMenu .opener {
+	position: absolute;
+	z-index: 10;
+	top: 0px;
+	right: 0px;
+	display: none;
+	padding-left: 6px;
+	width: 16px;
+	height: 18px;
+	background: #FFF;
+	border: 1px solid #CCC;
+	font-weight: bold;
+	}
+.cmContextMenu .opener.open {
+	background: #FFF;
+	border: 1px solid #CCC;
+	border-bottom: 1px solid #FFF;
+	height: 19px;
+	}
+
+.cmContextMenu .contextMenu {
+	position: absolute;
+	z-index: 9;
+	top: 20px;
+	right: 0px;
+	width: 116px;
+	display: none;
+	background: #FFF;
+	border: 1px solid #CCC;
+	padding: 1px;
+	opacity: 0.85;
+	}
+.cmContextMenu .contextMenu ul {
+	margin: 0px;
+	padding: 0px;
+	}
+.cmContextMenu .contextMenu ul {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	}

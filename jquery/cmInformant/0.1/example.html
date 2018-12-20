@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>cmInformant Demo</title>
+    <link rel="stylesheet" href="//css.ceusmedia.com/blueprint/reset.css"/>
+    <link rel="stylesheet" href="//css.ceusmedia.com/blueprint/typography.css"/>
+    <link rel="stylesheet" href="cmInformant.css"/>
+    <link rel="stylesheet" href="cmInformant.info.css"/>
+    <link rel="stylesheet" href="cmInformant.round.css"/>
+    <script src="//js.ceusmedia.com/jquery/1.2.3.pack.js"></script>
+    <script src="//js.ceusmedia.com/jquery/cookie.pack.js"></script>
+    <script src="//js.ceusmedia.com/jquery/dimension/1.1.2.pack.js"></script>
+    <script src="//js.ceusmedia.com/jquery/timer.js"></script>
+    <script src="//js.ceusmedia.com/jquery/easing/1.3.js"></script>
+    <script src="cmInformant.js"></script>
+    <style>
+xmp {
+    border: 1px dotted gray;
+    background: #EEE;
+	font-family: Lucida Console;
+	font-size: 1em;
+	padding: 1em;
+	}
+    </style>
+  </head>
+  <body style="margin: 1em">
+    <div id="container">
+      <h1>cmInformant Demo</h1>
+
+      <h3>Examples</h3>
+
+<script>
+function informNormal(){
+  $.cmInformant("Here comes the content:<br/>Two is greater than one",{
+      heading		: "Heading",
+      sticky		: !true,
+      easeIn		: "easeInOutQuad",
+      easeOut		: "easeInOutQuad",
+      speedIn		: 750,
+      speedOut		: 1000,
+      padding		: 2
+  });
+}
+function informConfigured(){
+  $.cmInformant("Here comes the content:<br/>Two is greater than one",{
+      heading		: "Heading",
+      sticky		: !true,
+      class			: "round info",
+      easeIn		: "easeInOutQuad",
+      easeOut		: "easeInOutQuad",
+      speedIn		: 750,
+      speedOut		: 1000,
+      animateIn		: {
+        opacity: 1
+      },
+      animateOut	: {
+        opacity: 0
+      },
+  });
+}
+function informSticky(){
+  $.cmInformant("This one will stay until you click it.",{
+      heading		: "sticky",
+      sticky		: true,
+      class			: "round info",
+      animateIn		: {
+        opacity: 1
+      },
+      animateOut	: {
+        opacity: 0
+      },
+  });
+}
+</script>
+
+      <a href="#" onclick="informNormal()">add a normal Message Box</a><br/>
+      <a href="#" onclick="informConfigured()">add a nicely configured Message Box</a><br/>
+      <a href="#" onclick="informSticky()">add a sticky Message Box</a><br/>
+      <br/>
+
+      <h4>Sample Code</h4>
+      <xmp>$.cmInformant("Here comes the content:<br/>Two is greater than one",{
+      heading      : "Heading",
+      sticky       : !true,
+      class        : "round info",
+      easeIn       : "easeInOutQuad",
+      easeOut      : "easeInOutQuad",
+      speedIn      : 750,
+      speedOut     : 1000,
+      animateIn    : {
+        opacity : 1
+      },
+      animateOut   : {
+        opacity : 0
+      },
+});
+</xmp>
+    </div>
+  </body>
+</html>

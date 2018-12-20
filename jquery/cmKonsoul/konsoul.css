@@ -1,0 +1,89 @@
+#konsoul {
+	position: absolute;
+	width: 100%;
+	left: 0px;
+	bottom: 0px;
+	border-top: 1px solid #999;
+	background-color: #EEE;
+	font-family: monospace;
+	font-size: 11px;
+	overflow: visible;
+	z-index: 11;
+	height: auto;
+	}
+
+#konsoul-head {
+	width: 100%;
+	height: 23px;
+	background-image: url(head_bg.png);
+	background-repeat: repeat-x;
+	border-bottom: 1px solid gray;
+	user-select: none;
+	-o-user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	}
+
+#konsoul-head .title {
+	padding: 4px 10px;
+	font-size: 1.1em;
+	font-family: sans-serif;
+	}
+
+#konsoul-trigger-close {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	width: 14px;
+	height: 14px;
+	background-image: url(button_close.png);
+	background-repeat: no-repeat;
+	}
+
+#konsoul-content {
+	overflow: auto;
+	height: 0px;
+	}
+#konsoul-content>ul {
+	margin: 0px;
+	padding: 0px;
+	list-style-position: inside;
+	list-style-type: square;
+	}
+
+#konsoul-content>ul>li {
+	margin: 0px;
+	padding: 1px 5px 1px 5px;
+	border-bottom: 1px solid #CCC;
+	}
+
+.level {
+	float: left;
+	display: block;
+	width: 16px;
+	height: 16px;
+	margin-right: 5px;
+	background-repeat: no-repeat;
+	}
+
+.level.level-system {
+	background-image: url(http://icons.ceusmedia.de/famfamfam/silk/lightning.png);
+	}
+.level.level-runtime {
+	background-image: url(http://icons.ceusmedia.de/famfamfam/silk/bullet_go.png);
+	}
+.level.level-debug {
+	background-image: url(http://icons.ceusmedia.de/famfamfam/silk/wrench.png);
+	}
+
+
+
+.level.level-info {
+	background-image: url(http://icons.ceusmedia.de/famfamfam/silk/information.png);
+	}
+.level.level-warn {
+	background-image: url(http://icons.ceusmedia.de/famfamfam/silk/error.png);
+	}
+.level.level-error {
+	background-image: url(http://icons.ceusmedia.de/famfamfam/silk/exclamation.png);
+	}

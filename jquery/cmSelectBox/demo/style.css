@@ -1,0 +1,16 @@
+
+div.cmSelectBox li.secure {
+	padding: 1px 2px 1px 24px;
+	background-color: #FEE;
+	background-image: url(/lib/cmIcons/famfamfam/silk/key.png);
+	background-repeat: no-repeat;
+	background-position: 4px 2px;
+	}
+
+div.cmSelectBox li.public {
+	padding: 1px 2px 1px 24px;
+	background-color: #DFD;
+	background-image: url(/lib/cmIcons/famfamfam/silk/world.png);
+	background-repeat: no-repeat;
+	background-position: 4px 2px;
+	}

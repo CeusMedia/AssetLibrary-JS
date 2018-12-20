@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Drag Demo</title>
+		<script type="text/javascript" src="../1.5.1.min.js"></script>
+		<script type="text/javascript" src="draggable.js"></script>
+		<script type="text/javascript" src="droppable.js"></script>
+		<script type="text/javascript" src="script.js"></script>
+		<link rel="stylesheet" href="http://css.ceusmedia.de/blueprint/reset.css"/>
+		<link rel="stylesheet" href="http://css.ceusmedia.de/blueprint/typography.css"/>
+		<link rel="stylesheet" href="style.css"/>
+	</head>
+	<body>
+		<h2>Draggable Demo</h2>
+		<p>
+			For JavaScript file &quot;draggable.js&quot;.
+		</p>
+		<div style="position: absolute; left: 450px;">
+			<h3>Items</h3>
+			<div id="canvas">
+				<div id="test-a" style="width: 150px; height: 150px;">
+					<p>A</p>
+					<div id="test-b" style="width: 100px; height: 100px; left: 20px; top: 20px">
+						<p>B</p>
+						<div id="test-c" style="left: 20px; top: 20px;  background-image: url(photoshop-5.png)"/>
+							<p>C</p>
+						</div>
+					</div>
+				</div>
+				<div id="test-img" style="float: left; background-image: url(photoshop-5.png)" style="border: 1px solid black"/></div>
+			</div>
+			<div id="droppable"></div>
+		</div>
+		<h3>Item properties <span id="coords"></span></h3>
+		<table>
+			<tr>
+				<td class="no-border"></td>
+				<th style="text-align: center">A</th>
+				<th style="text-align: center">B</th>
+				<th style="text-align: center">C</th>
+			</tr>
+			<tr>
+				<th>setup</th>
+				<td>
+					<button type="button" class="toggle-test-a" onclick="start('test-a');">start</button>
+					<button type="button" class="toggle-test-a hidden"  onclick="stop('test-a');">stop</button>
+				</td>
+				<td>
+					<button type="button" class="toggle-test-b"onclick="start('test-b');">start</button>
+					<button type="button" class="toggle-test-b hidden" onclick="stop('test-b');">stop</button>
+				</td>
+				<td>
+					<button type="button" class="toggle-test-c" onclick="start('test-c');">start</button>
+					<button type="button" class="toggle-test-c hidden" onclick="stop('test-c');">stop</button>
+				</td>
+			</tr>
+			<tr>
+				<th>enabled</th>
+				<td>
+					<button type="button" class="enabled-test-a hidden" onclick="setEnabled('test-a',true);">enable</button>
+					<button type="button" class="enabled-test-a"  onclick="setEnabled('test-a');">disable</button>
+				</td>
+				<td>
+					<button type="button" class="enabled-test-b hidden"onclick="setEnabled('test-b',true);">enable</button>
+					<button type="button" class="enabled-test-b" onclick="setEnabled('test-b');">disable</button>
+				</td>
+				<td>
+					<button type="button" class="enabled-test-c hidden" onclick="setEnabled('test-c',true);">enable</button>
+					<button type="button" class="enabled-test-c" onclick="setEnabled('test-c');">disable</button>
+				</td>
+			</tr>
+			<tr>
+				<th>bubble</th>
+				<td>
+					<button type="button" class="bubble-test-a" onclick="bubble('test-a');">bubble</button>
+					<button type="button" class="bubble-test-a hidden"  onclick="unbubble('test-a');">unbubble</button>
+				</td>
+				<td>
+					<button type="button" class="bubble-test-b"onclick="bubble('test-b');">bubble</button>
+					<button type="button" class="bubble-test-b hidden" onclick="unbubble('test-b');">unbubble</button>
+				</td>
+				<td>
+					<button type="button" class="bubble-test-c" onclick="bubble('test-c');">bubble</button>
+					<button type="button" class="bubble-test-c hidden" onclick="unbubble('test-c');">unbubble</button>
+				</td>
+			</tr>
+			<tr>
+				<th>revert</th>
+				<td>
+					<button type="button" class="revert-test-a" onclick="setRevert('test-a',true);">enable</button>
+					<button type="button" class="revert-test-a hidden"  onclick="setRevert('test-a',false);">disable</button>
+				</td>
+				<td>
+					<button type="button" class="revert-test-b"onclick="setRevert('test-b',true);">enable</button>
+					<button type="button" class="revert-test-b hidden" onclick="setRevert('test-b',false);">disable</button>
+				</td>
+				<td>
+					<button type="button" class="revert-test-c" onclick="setRevert('test-c',true);">enable</button>
+					<button type="button" class="revert-test-c hidden" onclick="setRevert('test-c',false);">disable</button>
+				</td>
+			</tr>
+			<tr>
+				<th>trapTo</th>
+				<td>
+					<select class="trap-test-a" onchange="setTrapped('test-a',$(this).val())">
+						<option></option>
+						<option>parent</option>
+						<option>#canvas</option>
+					</select>
+				</td>
+				<td>
+					<select class="trap-test-a" onchange="setTrapped('test-b',$(this).val())">
+						<option></option>
+						<option>parent</option>
+						<option>#canvas</option>
+						<option>#test-a</option>
+					</select>
+				</td>
+				<td>
+					<select class="trap-test-c" onchange="setTrapped('test-c',$(this).val())">
+						<option></option>
+						<option>parent</option>
+						<option>#canvas</option>
+						<option>#test-a</option>
+						<option>#test-b</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<th>axis</th>
+				<td>
+					<select class="axis-a" onchange="setAxis('test-a',$(this).val())"><option></option><option>x</option><option>y</option></select>
+				</td>
+				<td>
+					<select class="axis-b" onchange="setAxis('test-b',$(this).val())"><option></option><option>x</option><option>y</option></select>
+				</td>
+				<td>
+					<select class="axis-c" onchange="setAxis('test-c',$(this).val())"><option></option><option>x</option><option>y</option></select>
+				</td>
+			</tr>
+			<tr>
+				<th>start</th>
+				<td>
+					<input type="text" value="0" class="start-x-test-a x40" readonly/>
+					<input type="text" value="0" class="start-y-test-a x40" readonly/>
+				</td>
+				<td>
+					<input type="text" value="0" class="start-x-test-b x40" readonly/>
+					<input type="text" value="0" class="start-y-test-b x40" readonly/>
+				</td>
+				<td>
+					<input type="text" value="0" class="start-x-test-c x40" readonly/>
+					<input type="text" value="0" class="start-y-test-c x40" readonly/>
+				</td>
+			</tr>
+			<tr>
+				<th>position</th>
+				<td>
+					<input type="text" value="0" class="pos-x-test-a x40" onchange="setLeft('test-a',$(this).val())"/>
+					<input type="text" value="0" class="pos-y-test-a x40" onchange="setTop('test-a',$(this).val())"/>
+				</td>
+				<td>
+					<input type="text" value="0" class="pos-x-test-b x40" onchange="setLeft('test-b',$(this).val())"/>
+					<input type="text" value="0" class="pos-y-test-b x40" onchange="setTop('test-b',$(this).val())"/>
+				</td>
+				<td>
+					<input type="text" value="0" class="pos-x-test-c x40" onchange="setLeft('test-c',$(this).val())"/>
+					<input type="text" value="0" class="pos-y-test-c x40" onchange="setTop('test-c',$(this).val())"/>
+				</td>
+			</tr>
+			<tr>
+				<th>offset</th>
+				<td>
+					<input type="text" value="0" class="offset-x-test-a x40" readonly="readonly"/>
+					<input type="text" value="0" class="offset-y-test-a x40" readonly="readonly"/>
+				</td>
+				<td>
+					<input type="text" value="0" class="offset-x-test-b x40" readonly="readonly"/>
+					<input type="text" value="0" class="offset-y-test-b x40" readonly="readonly"/>
+				</td>
+				<td>
+					<input type="text" value="0" class="offset-x-test-c x40" readonly="readonly"/>
+					<input type="text" value="0" class="offset-y-test-c x40" readonly="readonly"/>
+				</td>
+			</tr>
+			<tr>
+				<th>moved</th>
+				<td>
+					<input type="text" value="0" class="moved-x-test-a x40" readonly="readonly"/>
+					<input type="text" value="0" class="moved-y-test-a x40" readonly="readonly"/>
+				</td>
+				<td>
+					<input type="text" value="0" class="moved-x-test-b x40" readonly="readonly"/>
+					<input type="text" value="0" class="moved-y-test-b x40" readonly="readonly"/>
+				</td>
+				<td>
+					<input type="text" value="0" class="moved-x-test-c x40" readonly="readonly"/>
+					<input type="text" value="0" class="moved-y-test-c x40" readonly="readonly"/>
+				</td>
+			</tr>
+		</table>
+		<div>
+		</div>
+	</body>
+</html>

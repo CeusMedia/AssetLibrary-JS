@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<title>cmProgressBar demo</title>
+		<script type="text/javascript" src="../../1.5.1.min.js"></script>
+		<script type="text/javascript" src="../0.1.js"></script>
+		<link rel="stylesheet" href="http://css.ceusmedia.de/blueprint/reset.css"/>
+		<link rel="stylesheet" href="http://css.ceusmedia.de/blueprint/typography.css"/>
+		<link rel="stylesheet" href="../0.1.css"/>
+		<script type="text/javascript">
+$(document).ready(function(){
+
+	$("#indicator-preload").cmProgressBar();
+
+	var calls = [
+		function(){$("#test").cmProgressBar('show');},
+		function(){$("#test").cmProgressBar('hide');},
+		function(){$("#test").cmProgressBar('next');},
+		function(){$("#test").cmProgressBar('update',$("#test").cmProgressBar('get')+10);},
+		function(){$("#test").cmProgressBar('update',$("#test").cmProgressBar('get')-10);}
+	];
+	for( var i in calls) $("a").eq(i).click(calls[i]);
+
+	var interval = setInterval(function(){
+		if($("#test").cmProgressBar('get') >= 100)
+			clearInterval(interval);
+		$("#test").cmProgressBar('next');
+	},100);
+});
+		</script>
+	</head>
+	<body style="margin: 2em">
+		<h2>cmProgressBar demo</h2>
+		<div id="test" class="progressBar-track">
+			<div class="progressBar-bar"></div>
+		</div>
+		<br/>
+
+		<a href="#">show</a> |
+		<a href="#">hide</a> |
+		<a href="#">next</a> |
+		<a href="#">+10</a> |
+		<a href="#">-10</a>
+	</body>
+</html>

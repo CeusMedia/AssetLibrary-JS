@@ -1,0 +1,12 @@
+body {
+	margin: 1em 2em;
+	}
+div.framed {
+	width: 200px;
+	height: 150px;
+	overflow: auto;
+	border: 1px solid gray;
+	padding: 0.5em 1em;
+	border-radius: 3px;
+	overflow: hidden;
+	}

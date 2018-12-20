@@ -1,0 +1,63 @@
+/*  --  PANEL  --  */
+.panel.apple {
+	margin-top: 1em;
+	margin-bottom: 1.5em;
+	}
+.panel.apple .panelHead,
+.panel.apple .panelFoot,
+.panel.apple .panelHead .panelHeadInner,
+.panel.apple .panelFoot .panelFootInner {
+	background-image:url(images/back_1.png);
+	background-repeat: no-repeat;
+	}
+.panel.apple .panelHead,
+.panel.apple .panelFoot {
+	margin-right: 5px;
+	}
+.panel.apple .panelHead .panelHeadInner,
+.panel.apple .panelFoot .panelFootInner {
+	margin-left: 5px;
+	margin-right: -5px;
+	padding-left: 5px;
+	padding-right: 5px;
+	}
+
+.panel.apple .panelHead {
+	height: 33px;
+	}
+.panel.apple .panelHead .panelHeadInner {
+	background-position: right top;
+	padding-top: 6px;
+	padding-bottom: 4px;
+	color: #FFF;
+	font-size: 1.4em;
+	}
+
+.panel.apple .panelContent {
+	border: 1px solid gray;
+	border-top: 0px;
+	border-bottom: 0px;
+	margin-left: 1px;
+	margin-right: 1px;
+	}
+.panel.apple .panelContent .panelContentInner{
+	padding: 6px 8px 10px 8px;
+	background: #EEE;
+	}
+.panel.apple .panelFoot {
+	background-position: left -33px;
+	}
+.panel.apple .panelFoot .panelFootInner {
+	background-position: right -33px;
+	padding-top: 0.5em;
+	padding-left: 5px;
+	font-style: italic;
+	font-size: 0.9em;
+	}
+	
+.panel.apple:hover .panelHead,
+.panel.apple:hover .panelHead .panelHeadInner,
+.panel.apple:hover .panelFoot,
+.panel.apple:hover .panelFoot .panelFootInner{
+	background-image:url(images/back_2.png);
+	}

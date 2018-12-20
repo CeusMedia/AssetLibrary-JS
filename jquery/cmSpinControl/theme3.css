@@ -1,0 +1,29 @@
+.theme3 span.spin-control {
+	position: relative;
+	float: left;
+	clear: left;
+	}
+.theme3 span.spin-control input {
+	width: 100px;
+	height: 21px;
+	margin: 0px 0px 1px 0px;						/*  remove ! */
+	padding: 1px;
+	border: 1px solid #BBB;
+	background-color: #FFE;
+	text-align: center;
+	}
+.theme3 span.spin-control button {
+	position: absolute;
+	top: 2px;
+	width: 17px;
+	height: 17px;
+	margin: 0px;
+	padding: 0px;
+	font-size: 0.7em;
+	}
+.theme3 span.spin-control button.button-up {
+	right: 2px;
+	}
+.theme3 span.spin-control button.button-down {	
+	left: 2px;
+	}

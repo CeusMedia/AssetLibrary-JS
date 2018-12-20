@@ -1,0 +1,90 @@
+.cmComboBox {
+	position: relative;
+	z-index: 1;
+	}
+
+.cmComboBox .trigger {
+	position: absolute;
+	top: 0px;
+	left: 121px;
+	width: 24px;
+	height: 21px;
+	background-image: url(trigger_small.png);
+	background-position: 0px 0px;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	z-index: 1000;
+	}
+
+.cmComboBox .trigger.open{
+	background-position: 0px -21px;
+	}
+
+.cmComboBox input {
+	margin: 0px;
+	width: 120px;
+	height: 17px;
+	border: 1px solid gray;
+	border-right: none;
+	z-index: 1000;
+	}
+
+.cmComboBox .options {
+	display: none;
+	position: absolute;
+	z-index: 1001;
+	top: 20px;
+	left: 0px;
+	width: 140px;
+	max-height: 280px;
+	overflow: auto;
+	border: 1px solid gray;
+	border-top: 0px;
+	border-top: 1px dotted #CCC;
+	background: white;
+	}
+
+.cmComboBox .options ul,
+.cmComboBox .options ol {
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+	}
+
+.cmComboBox .options li.group {
+	padding: 1px 2px;
+	font-weight: bold;
+	font-style: italic;
+	}
+
+.cmComboBox .options ul li {
+	padding: 1px 2px;
+	cursor: pointer;
+	font-weight: !inherit;
+	font-style: !inherit;
+	}
+.cmComboBox .options ul li span {
+/*	border-bottom: 1px solid #CCC;*/
+	}
+
+.cmComboBox .options ul li:hover {
+	background-color: #0A246A;
+	color: #FFF;
+	}
+
+.cmComboBox .options ul li.current {
+	background-color: #008F00;
+	color: #FFF;
+	}
+
+.cmComboBox .options ol ul {
+	margin-left: 10px;
+	}
+.cmComboBox .options div.heading {
+	color: gray;
+	font-size: 0.8em;
+	text-align: center;
+	border-bottom: 1px dotted #DDD;
+	}
+
+

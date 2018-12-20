@@ -1,0 +1,50 @@
+/*  --  LADDER PLUGIN --  */
+div.ladder {
+	position: relative;
+	margin: 5px;
+	}
+div.ladder ul.ladder {
+	position: relative;
+	display: block;
+	float: left;
+	width: 200px;
+	margin: 0px;
+	padding: 0px;
+	}
+div.ladder ul.ladder li {
+	display: block;
+	list-style: none;
+	background: #eee;
+	margin: 0px 0px 0px 5px;
+	color: #333;
+	border-right: 0px;
+	}
+div.ladder ul.ladder li span {
+	padding: 4px 10px 4px 10px;
+	font-weight: bold;
+	font-style: italic;
+	display: block;
+	cursor: pointer;
+	}
+div.ladder ul.ladder li.active {
+	display: block;
+	list-style: none;
+	background: #FFF;
+	border: 1px solid gray;
+	border-right: 0px;
+	width: 200px;
+	color: #000;
+	margin: 0px;
+	position: relative;
+	}
+div.ladder .ladderContent {
+	margin-left: 200px;
+	display: none;
+	border: 1px solid gray;
+	background: #FFF;
+	padding: 4px 10px 4px 10px;
+	min-height: 30px;
+	}
+div.ladder .ladderContent.active {
+	display: block;
+	}

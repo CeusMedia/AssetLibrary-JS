@@ -1,0 +1,12 @@
+{
+    "name": "ceus-media/js-jquery-auto-scroll",
+    "authors": [
+        {
+            "name": "Christian Würker",
+            "email": "christian.wuerker@ceusmedia.de"
+        }
+    ],
+    "require": {
+        "ceus-media/classes": "dev-master"
+    }
+}

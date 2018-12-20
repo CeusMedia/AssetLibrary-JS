@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>cmKonsoul demo</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" href="konsoul.css"/>
+		<script type="text/javascript" src="../1.5.1.min.js"></script>
+		<script type="text/javascript" src="konsoul.js"></script>
+		<script type="text/javascript" src="../cmDraggable/draggable.js"></script>
+<!--		<base href="http://localhost/projects/Journal/konsoul/"/>-->
+		<script type="text/javascript">
+var wID;
+function resizeTo(height){
+	wID.outerHeight = height;
+}
+
+$(document).ready(function(){
+	konsoul.init({limit:12,open: true});
+/*	for(i=0; i<document.styleSheets.length; i++){
+		konsoul.log(document.styleSheets[i].href);
+	}*/
+//	wID = window.open('ext.html','w-konsoul',"dependent=yes,height=400,width=600,resizable=yes");
+//	console.log(wID);
+});
+		</script>
+	</head>
+	<body>
+		<button type="button" onmousedown="konsoul.log(16,new Date().getTime());">test info</button><br/>
+		<button type="button" onmousedown="konsoul.log(32,new Date().getTime());">test warn</button><br/>
+		<button type="button" onmousedown="konsoul.log(64,new Date().getTime());">test error</button><br/>
+		<button type="button" onmousedown="konsoul.log(1,new Date().getTime());">test system</button><br/>
+		<button type="button" onmousedown="konsoul.log(2,new Date().getTime());">test info</button><br/>
+		<button type="button" onmousedown="konsoul.log(4,new Date().getTime());">test debug</button><br/>
+<!--		<iframe src="http://192.168.1.10/projects/Journal/konsoul/int.html"></iframe>
+		  <span onclick="resizeTo(100)">100</span>
+		  <span onclick="resizeTo(200)">200</span>-->
+	</body>
+</html>

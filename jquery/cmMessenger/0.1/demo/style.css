@@ -1,0 +1,53 @@
+h3 {
+	display: inline;
+	padding-left: 1.2em;
+	padding-right: 1.0em;
+	color: #FFF;
+	text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.7);
+	}
+
+div.cmMessenger {
+	}
+
+div.buttons {
+	padding: 7px;
+	background-image: url(bgmenu1.png);
+	background-repeat: repeat-x;
+	background-position: 0px 22px;
+	background-color: #BBB;
+	border-bottom: 1px solid #BBB;
+	}
+div.buttons button {
+	color: #333;
+	font-size: 1.0em;
+	cursor: pointer;
+	text-shadow:  1px 1px 0 rgba(255, 255, 255, 0.4);
+	}
+div.buttons button span {
+	}
+
+div#content {
+	margin: 0em 1em;
+	}
+div#content h2  {
+	padding-top: 0.5em;
+	}
+div#content h4 {
+	margin: 0.7em 0.1em 0.2em 0.1em;
+	font-weight: normal;
+	font-style: italic;
+	}
+div#content pre.code,
+div#content xmp {
+	margin: 0em;
+	border: 1px solid gray;
+	background-color: #DDD;
+	}
+div#content pre {
+	padding: 1em 1em 0em 1em;
+	}
+
+div#content xmp {
+	padding: 0em 1em 0em 1em;
+	font: 1em/1.5 'andale mono','lucida console',monospace;
+	}

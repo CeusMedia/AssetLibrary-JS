@@ -1,0 +1,24 @@
+/*  --  COLLAPSE PANEL   --  */
+.panel.collapsable.default {}
+.panel.collapsable.default .panelHead {
+	background-image:url(images/bullet_toggle_minus.png);
+	background-repeat: no-repeat;
+	background-position: 4px 5px;
+	cursor: pointer;
+	}
+.panel.collapsable.default .panelHead .panelHeadInner {
+	padding-left: 1.5em;
+	}
+.panel.collapsable.default .panelContent {}
+.panel.collapsable.default .panelFoot {}
+.panel.collapsable.default.collapsed {
+	opacity: 0.75;
+	}
+.panel.collapsable.default.collapsed .panelHead {
+	background-image:url(images/bullet_toggle_plus.png);
+	}
+.panel.collapsable.default.collapsed .panelContent {
+	}
+.panel.collapsable.default.collapsed .panelFoot {
+	border-top: 0px;
+	}

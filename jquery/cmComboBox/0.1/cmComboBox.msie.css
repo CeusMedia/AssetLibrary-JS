@@ -1,0 +1,12 @@
+.cmComboBox .trigger {
+	top: 1px;
+	}
+.cmComboBox .options {
+	overflow: visible;
+	top: 21px;
+	}
+
+.cmComboBox .options ul li {
+	font-weight: normal;
+	font-style: normal;
+	}

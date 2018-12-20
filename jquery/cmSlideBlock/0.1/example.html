@@ -1,0 +1,158 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="http://css.ceusmedia.com/blueprint/reset.css"/>
+    <link rel="stylesheet" href="http://css.ceusmedia.com/blueprint/typography.css"/>
+    <link rel="stylesheet" href="cmSlideBlock.css">
+    <link rel="stylesheet" href="example.css">
+    <script src="http://js.ceusmedia.com/jquery/1.2.3.pack.js"></script>
+    <script src="http://js.ceusmedia.com/jquery/cookie.js"></script>
+    <script src="cmSlideBlock.js"></script>
+    <script>
+$(document).ready(function(){
+  $(".blocks").cmSlideBlock({
+    size: 275,
+    indent: 25,
+    speed: 250
+  });
+});
+    </script>
+  </head>
+  <body style="margin: 1em">
+    <h1>cmSlideBlock Demo</h1>
+    <div id="block1" class="blocks">
+      <div class="toggler">
+        <br/><br/><br/><br/><br/><br/><br/>
+        &nbsp;&nbsp;<b style="font-size: 1.3em">&nbsp;&laquo;</b>
+      </div>
+      <div class="container">
+        <div style="float: left; margin: 0em 1em">
+          <h2>Heading</h2>
+          <ul>
+            <li>List item 1</li>
+            <li>List item 2</li>
+            <li>List item 3</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="block2" class="blocks">
+      <div class="toggler">
+        <br/><br/><br/><br/><br/><br/><br/>
+        &nbsp;&nbsp;<b style="font-size: 1.3em">&nbsp;&laquo;</b>
+      </div>
+      <div class="container">
+        <div style="float: left; margin: 0em 1em">
+          <h2>Heading</h2>
+          <ul>
+            <li>List item 1</li>
+            <li>List item 2</li>
+            <li>List item 3</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+    <p>
+      Welcome to the demonstration of jQuery plugin <em><b>cmSlideBlock</b></em>.<br/>
+      This plugin will produce content blocks which can be slided into the site from the right border. In this example there are two blocks in the right which can be slided in.<br/>
+      <br/>
+      This plugin is licended under GPL3. You can use it for free but have to report all improvements back to the <a href="mail:christian.wuerker@ceus-meida.de">author</a>.<br/>
+    </p>
+
+
+
+    <h2>Integration</h2>
+    You need to link the following resources in your HTML head:
+    <ol>
+      <li>jQuery >= 1.2.3</li>
+      <li>jQuery plugin 'cookie' <small>(for persistent state of blocks)</small></li>
+      <li>jQuery plugin 'cmSlideBlock' <small>(this plugin)</small></li>
+      <li>CSS of 'cmSlideBlock' <small>(or your own customized style for cmSlideBlock)</small></li>
+    </ol>
+    <br/>
+    <h3>Example</h3>
+    <xmp>
+<link rel="stylesheet" href="cmSlideBlock.css">
+<link rel="stylesheet" href="example.css">
+<script src="http://js.ceusmedia.com/jquery/1.2.3.pack.js"></script>
+<script src="http://js.ceusmedia.com/jquery/cookie.js"></script>
+<script src="cmSlideBlock.js"></script>
+    </xmp>
+
+
+
+    <h2>HTML for blocks</h2>
+    All blocks to be slided need to have a specific structure.<br/>
+    <br/>
+    <h3>Example</h3>
+    <xmp>
+<div id="yourUniqueBlockId">
+  <div class="toggler"></div>
+  <div class="container">
+    Here goes your content.<br/>
+  </div>
+</div>
+    </xmp>
+    You should capsulate your content in another DIV with 'float: left' if you want to add padding or margin.<br/>
+    <br/>
+
+
+
+
+    <h2>Calling the plugin</h2>
+    Now you are ready to apply <em><b>cmSlideBlock</b></em>.<br/>
+    <br/>
+    <h3>Examples</h3>
+    <h4>With default settings:</h4>
+    <xmp>
+$(document).ready(function(){
+  $(".blocks").cmSlideBlock();
+});
+    </xmp>
+
+    <h4>With custom settings:</h4>
+    <xmp>
+$(document).ready(function(){
+  $(".blocks").cmSlideBlock({
+    size: 275,
+    indent: 25,
+    speed: 250
+  });
+});
+    </xmp>
+
+
+    <h2>Manipulation</h2>
+    All blocks can be opened or shut with function calls.<br/>
+    <br/>
+    <b>Open :</b>
+    <tt>
+    slideInBlock("#uniqueBlockId");
+    </tt>
+    <br/>
+    <b>Shut :</b>
+    <tt>
+    slideOutBlock("#uniqueBlockId");
+    </tt>
+    <br/>
+    <b>Toggle :</b>
+    <tt>
+    toggleSlideBlock("#uniqueBlockId");
+    </tt>
+    <br/>
+    <h3>Examples</h3>
+    <h4>Block 1</h4>
+    <ul>
+      <li><a href="#" onclick="slideInBlock('#block1');">open</a></li>
+      <li><a href="#" onclick="slideOutBlock('#block1');">close</a></li>
+      <li><a href="#" onclick="toggleSlideBlock('#block1');">toggle</a></li>
+    </ul>
+    <h4>Block 2</h4>
+    <ul>
+      <li><a href="#" onclick="slideInBlock('#block2');">open</a></li>
+      <li><a href="#" onclick="slideOutBlock('#block2');">close</a></li>
+      <li><a href="#" onclick="toggleSlideBlock('#block2');">toggle</a></li>
+    </ul>
+  </body>
+</html>

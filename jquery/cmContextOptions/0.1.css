@@ -1,0 +1,58 @@
+
+/*  --  CONTEXT OPTIONS  --  */
+.cmContentOptions {
+	position: relative;
+	width: 120px;
+	height: 20px;
+	background: #EEE;
+	}
+.cmContentOptions .label {
+	padding: 1px 2px;
+	}
+
+.cmContentOptions .flag {
+	float: left;
+	display: block;
+	padding: 4px 6px 0px 3px;
+	}
+
+.cmContentOptions .drop {
+	position: absolute;
+	display: none;
+	top: 0px;
+	right: 0px;
+	width: 16px;
+	border: 1px solid #EEE;
+	border-left: 1px solid #CCC;
+	font-weight: bold;
+	padding-left: 4px;
+	z-index: 10;
+	height: 18px;
+	}
+.cmContentOptions .drop.open {
+	background: #DDD;
+	border: 1px solid #CCC;
+	border-bottom: 1px solid #DDD;
+	height: 20px;
+	}
+
+.cmContentOptions .options {
+	position: absolute;
+	top: 20px;
+	right: 0px;
+	width: 116px;
+	display: none;
+	background: #DDD;
+	border: 1px solid #CCC;
+	z-index: 9;
+	padding: 1px;
+	}
+.cmContentOptions .options ul {
+	margin: 0px;
+	padding: 0px;
+	}
+.cmContentOptions .options ul {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	}

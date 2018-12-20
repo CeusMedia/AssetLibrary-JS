@@ -1,0 +1,17 @@
+.wrap1 {
+	background:transparent url(shadow.gif) no-repeat scroll right bottom;
+	float:left;
+	}
+.wrap1 div {
+	background:transparent url(corner_bl.gif) no-repeat scroll -4px 100%;
+	}
+.wrap1 div div {
+	background:transparent url(corner_tr.gif) no-repeat scroll 100% -4px;
+	padding:0pt 16px 16px 0pt;
+	}
+.wrap1 div div img {
+	border-color:#EFEFEF rgb(204, 204, 204) rgb(204, 204, 204) rgb(239, 239, 239);
+	border-style:solid;
+	border-width:1px;
+	display:block;
+	}

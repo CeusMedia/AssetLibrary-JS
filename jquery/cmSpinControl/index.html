@@ -1,0 +1,265 @@
+<html>
+	<head>
+		<title>SpinControl</title>
+		<link rel="stylesheet" href="http://css.ceusmedia.de/blueprint/reset.css"/>
+		<link rel="stylesheet" href="http://css.ceusmedia.de/blueprint/typography.css"/>
+		<link rel="stylesheet" href="http://js.ceusmedia.de/jquery/ui/1.8.4/css/smoothness.css"/>
+		<link rel="stylesheet" href="http://js.ceusmedia.de/shjs/css/sh_vim-dark.css"/>
+		<link rel="stylesheet" href="theme1.css"/>
+		<link rel="stylesheet" href="theme2.css"/>
+		<link rel="stylesheet" href="theme3.css"/>
+		<link rel="stylesheet" href="theme4.css"/>
+		<style>
+body {
+	margin: 1em;
+	font-size: 82%;
+	}
+h2,h3 {
+	margin: 0.6em 0em 0.3em 0em;
+	}
+input.numeric {
+	}
+pre.sh_sourceCode {
+/*		background-color: #EEE;
+		border: 1px solid #BBB;*/
+		font-size: 0.9em;
+		padding: 0.25em 0.5em;
+	}
+		</style>
+		<script src="http://js.ceusmedia.de/jquery/1.6.1.min.js"></script>
+		<script src="http://js.ceusmedia.de/jquery/ui/1.8.4/min.js"></script>
+		<script src="http://js.ceusmedia.de/jquery/cookie.js"></script>
+		<script src="http://js.ceusmedia.de/shjs/sh_main.min.js"></script>
+		<script src="http://js.ceusmedia.de/shjs/lang/sh_javascript.min.js"></script>
+		<script src="http://js.ceusmedia.de/shjs/lang/sh_html.min.js"></script>
+		<script src="cmSpinControl.js"></script>
+		<script>
+$(document).ready(function(){
+	
+	$('#tabs').tabs({
+		cookie: {expires: 1}
+	});
+	$('#tabs').css('width',800);
+	var options = {
+		max: 400,
+		min: -400,
+		step: 10,
+		value: 10
+	};
+	
+	$('#tab-setup input.spin-control').cmSpinControl();
+	$('#tab-options input.spin-control').cmSpinControl(options);
+	$('#tab-methods input.spin-control').cmSpinControl();
+//	$('#tab-methods input.spin-control').cmSpinControl('setValue',20);
+	$('#tab-methods input.spin-control').cmSpinControl('setOption','max','30');
+	$('#tab-methods input.spin-control').cmSpinControl('setOption','min','-99');
+	$('#tab-methods input.spin-control').cmSpinControl('setOption','precision','2');
+	$('#tab-themes input.spin-control').eq(0).cmSpinControl();
+	$('#tab-themes input.spin-control').eq(1).cmSpinControl();
+	$('#tab-themes input.spin-control').eq(2).cmSpinControl({labelUp: '&raquo', labelDown: '&laquo;'});
+	$('#tab-themes input.spin-control').eq(3).cmSpinControl({labelUp: '&raquo', labelDown: '&laquo;'});
+
+	$('input.spin-control').cmSpinControl('setOption','change',function(event,data){
+		var name = data.target.attr('name');
+		console.log('@change:options: Value of spin control "' + name + '" is ' + data.value);
+	});
+
+	$('input.spin-control').bind('change',function(event){
+		var name = $(this).attr('name');
+		var value = $(this).val();
+		console.log('@change:bound: Value of spin control "' + name + '" is ' + value);
+		var data = $(this).data('cmSpinControl');
+	});
+
+
+	$('input.spin-control').bind('change',function(event){
+		console.log('value@change: '+$(this).val());
+	});
+	sh_highlightDocument();
+});		
+		</script>
+	</head>
+	<body>
+		<h2>cmSpinControl</h2>
+		<p>
+			This is a demonstration of <cite>cmSpinControl</cite> - a jQuery plugin to extend a (numeric) input field to a full spin control component.<br/>
+		</p>
+		<div id="tabs">
+			<ul>
+				<li><a href="#tab-features">Features</a></li>
+				<li><a href="#tab-setup">Setup</a></li>
+				<li><a href="#tab-options">Options</a></li>
+				<li><a href="#tab-methods">Methods</a></li>
+				<li><a href="#tab-events">Events</a></li>
+				<li><a href="#tab-themes">Themes</a></li>
+			</ul>
+			<div id="tab-features" class="theme1">
+				<dl>
+					<dt>jQuery plugin</dt>
+					<dd><a href="http://docs.jquery.com/Plugins/Authoring">Plugin</a> with options, modern method call and chainability. Easily applied on text input field.</dd>
+					<dt>Options</dt>
+					<dd>Minimum value, maximum value, default value, step width and button labels.</dd>
+					<dt>Setters</dt>
+					<dd>Set value and options after construction.</dd>
+					<dt>Destroyable</dt>
+					<dd>Can be destroyed (and constructed again).</dd>
+					<dt>Acceleration</dt>
+					<dd>Gets faster while pressing button after 10 and 50 steps.</dd>
+					<dt>Themes</dt>
+					<dd>Easy styling. Several themes are available.</dd>
+				</dl>
+			</div>
+			<div id="tab-setup" class="theme1">
+				<p>
+					Here is the default setup.<br/>
+					A simple text input field like this:
+				</p>
+				<pre class="sh_html">&lt;input type="text" name="test" class="spin-control"/&gt;</pre>
+				<p>
+					can be extended to a numeric spin control input field by calling the plugin (after loading and document ready) like this:
+				</p>
+				<pre class="sh_javascript">$('input.spin-control').cmSpinControl();</pre>
+				<p>
+					No further options were given on construction. So you can increase and decrease by 1 without limits.<br/>
+					And this is the result:
+				</p>
+				<input type="text" name="setup" class="spin-control">
+				<div style="clear: left"></div>
+			</div>
+			<div id="tab-options" class="theme1">
+				<h3>Options</h3>
+				<dl>
+					<dt>max</dt>
+					<dd>Maximum integer value. Example: 100</dd>
+					<dt>min</dt>
+					<dd>Minimum integer value. Example: -100</dd>
+					<dt>step</dt>
+					<dd>...</dd>
+					<dt>labelUp</dt>
+					<dd>Label of increment button. Default: <tt>&amp;plus;</tt>(&plus;). Example: <tt>&amp;raquo;</tt>(&raquo;).</dd>
+					<dt>labelDown</dt>
+					<dd>Label of decrement button. Default: <tt>&amp;minus;</tt>(&minus;). Example: <tt>&amp;laquo;</tt>(&laquo;).</dd>
+				</dl>
+				<h3>Demo</h3>
+				<p>
+					On construction the following options are given:
+				</p>
+				<ul>
+					<li>max: 400</li>
+					<li>min: -400</li>
+					<li>step: 10</li>
+				</ul>
+				<pre class="sh_javascript">$('input.spin-control').cmSpinControl({max: 400, min: -400, step: 10});</pre>
+				<input type="text" name="options" class="spin-control">
+				<div style="clear: left"></div>
+			</div>
+
+			<div id="tab-methods" class="theme1">
+				<h3>Methods</h3>
+				<p>
+					Following the jQuery plugin authoring rules you can call the following methods:
+				</p>
+				<dl>
+					<dt><code><b>setValue(value)</b></code></dt>
+					<dd>
+						<p>
+							Sets input element value.<br/>
+							Example:
+						</p>
+						<pre class="sh_javascript">$('input.spin-control').cmSpinControl('setValue',20);</pre>
+						<br/>
+					</dd>
+					<dt><code><b>setOption(key,value)</b></code></dt>
+					<dd>
+						<p>
+							Sets an option value by its key.<br/>
+							Examples:
+						</p>
+						<pre class="sh_javascript">$('input.spin-control').cmSpinControl('setOption','max','30');</pre>
+						<pre class="sh_javascript">$('input.spin-control').cmSpinControl('setOption','min','-99');</pre>
+						<pre class="sh_javascript">$('input.spin-control').cmSpinControl('setOption','step','.1');</pre>
+					</dd>
+				</dl>
+				<h3>Demo</h3>
+				<p>
+					So the default value should be 20 and you can increase to atmost 30.<br/>
+					
+				</p>
+				<input type="text" name="methods" class="spin-control">
+				<div style="clear: left"></div>
+			</div>
+
+			<div id="tab-events">
+				<h3>Events</h3>
+				<p>
+					Within the options the some event handling callback function can be defined.<br/>
+					These functions can also be applied after construction using <cite>setOption</cite>.<br/>
+				</p>
+				<dl>
+					<dt><code><b>change(event,data)</b></code></dt>
+					<dd>
+						<p>
+							Defined as option on construction:
+						</p>
+						<pre class="sh_javascript">$('input.spin-control').cmSpinControl({change: function(event,data){
+	var name = data.target.attr('name');
+	var value = data.value;
+	alert('Value of spin control "' + name + '" changed to ' + value);
+});</pre>
+						<p>
+							Set after construction using <cite>setOption</cite>:
+						</p>
+						<pre class="sh_javascript">$('input.spin-control').cmSpinControl('setOption','change',function(event,data){
+	var name = data.target.attr('name');
+	var value = data.value;
+	alert('Value of spin control "' + name + '" changed to ' + value);
+});</pre>
+						<p>
+							In both cases the bound event key will be namespaced (<cite>change.cmSpincontrol</cite>).<br/>
+							<br/>
+							You can also bind a common change event closure. You may need to extract spin control data.<br/> 
+						</p>
+						<pre class="sh_javascript">$('input.spin-control').bind('change',function(event){
+	var name = $(this).attr('name');
+	var value = $(this).val();
+	alert('Value of spin control "' + name + '" changed to ' + value);
+	var data = $(this).data('cmSpinControl');
+	...
+});</pre>
+						<p>
+							If you set both handlers, the handler set by options will be called first.<br/>
+							You may need to stop event propagation there if external bound handlers must not be triggered.
+						</p>
+					</dd>
+				</dl>
+			</div>
+
+			<div id="tab-themes">
+				<div class="theme1">
+					<h3>Theme 1</h3>
+					<p></p>
+					<input type="text" name="theme1" class="spin-control">
+					<div style="clear: left"></div>
+				</div>
+				<div class="theme2">
+					<h3>Theme 2</h3>
+					<p>This is a larger theme with more common button positions.</p>
+					<input type="text" name="theme2" class="spin-control">
+					<div style="clear: left"></div>
+				</div>
+				<div class="theme3">
+					<h3>Theme 3</h3>
+					<p>The buttons are now arranged left and right inside the input field. Labels are changed on construction.</p>
+					<input type="text" name="theme3" class="spin-control">
+					<div style="clear: left"></div>
+				</div>
+				<div class="theme4">
+					<h3>Theme 4</h3>
+					<p>This time the buttons are arranged like above but all parts are combined to one larger controller.</p>
+					<input type="text" name="theme4" class="spin-control">
+					<div style="clear: left"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

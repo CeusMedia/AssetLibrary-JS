@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>cmOptions Demo</title>
+    <script type="text/javascript" src="//js.ceusmedia.com/jquery/1.3.2.min.js"></script>
+    <script type="text/javascript" src="//js.ceusmedia.com/jquery/color.js"></script>
+    <script type="text/javascript" src="//js.ceusmedia.com/jquery/cmBlitz/0.1.js"></script>
+    <script type="text/javascript" src="//js.ceusmedia.com/jquery/cmDevLog/0.1.js"></script>
+    <script type="text/javascript" src="cmOptions.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="//css.ceusmedia.com/blueprint/reset.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="//css.ceusmedia.com/blueprint/typography.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="cmOptions.css"/>
+    <script type="text/javascript">
+function getOptions(){
+  $('#example').ajaxOptions({
+    url: './data.php',
+    async: true,
+    selected: '2'
+  });
+}
+
+$(document).ready(function(){
+  getOptions();
+});
+    </script>
+    <style>
+xmp {
+	font-family: lucida console;
+	background-color: #EEE;
+	padding: 0em 1em 0em 1em;
+	border: 1px solid gray
+	}
+	</style>
+  </head>
+  <body style="margin: 1em">
+    <h2>cmComboBox Demo</h2>
+    <p>
+      The select box below is empty onload and will be filled with options, loaded using AJAX.<br/>
+    </p>
+    <select id="example" class="cmOptions">
+      <option value="">- select -</option>
+    </select>
+    <br/>
+    <p>
+      <h3>HTML</h3>
+      Within the HTML code is a normal select box with identifier and a class for optical effects.<br/>
+      <xmp>
+<select id="example" class="cmOptions">
+  <option value="">- select -</option>
+</select>
+      </xmp>
+      <br/>
+      <h3>JavaScript</h3>
+      <xmp>
+$(document).ready(function(){
+  $('select#example').ajaxOptions({
+    url: './data.php',
+    async: true,
+    selected: '2'
+  });
+});
+      </xmp>
+      <br/>
+      <h3>HTML Includes</h3>
+      <p>
+        After loading jQuery you need to include the plugin and optional other used plugins.<br/>
+        For optical effects you can load the given plugin style.
+      </p>
+      <xmp>
+<script type="text/javascript" src="//js.ceusmedia.com/jquery/cmOptions/0.2.js"></script>
+<script type="text/javascript" src="//js.ceusmedia.com/jquery/color.js"></script>
+<script type="text/javascript" src="//js.ceusmedia.com/jquery/cmBlitz/0.1.js"></script>
+<link rel="stylesheet" type="text/css" href="//js.ceusmedia.com/jquery/cmOptions/0.2.css"/>
+      </xmp>
+  </body>
+</html>

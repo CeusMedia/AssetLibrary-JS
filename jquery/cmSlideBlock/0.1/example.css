@@ -1,0 +1,20 @@
+/*  --  NOSCRIPT  --  */
+.toggler {
+	display: none;
+	}
+
+
+/*  --  BLOCKS: position  --  */
+#block1.slideBlock {
+	top: 50px;
+	}
+
+#block2.slideBlock {
+	top: 400px;
+	}
+
+
+xmp {
+	font-family: Lucida Console;
+	font-size: 1em;
+	}

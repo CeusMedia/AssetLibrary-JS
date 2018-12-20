@@ -1,0 +1,9 @@
+/**
+ * jQuery.Plugin - Lazy loading of jQuery Plugins
+ * Copyright (c) 2008 Ariel Flesler - aflesler(at)gmail(dot)com | http://flesler.blogspot.com
+ * Dual licensed under MIT and GPL.
+ * Date: 3/5/2008
+ * @author Ariel Flesler
+ * @version 1.0.0
+ */
+;(function($){var g=$.plugin=function(c,d,e){var f=$.extend(this,g.defaults,e);f.q=[];f.url=f.base+c+f.ext;h(d,function(a,b){f.add(a,b)});if(f.id)g.registry[f.id]=f;if(typeof f.require!='object')f.require=[f.require]};g.register=function(a,b,c){return new g(a,b,c)};g.prototype={constructor:g,queue:function(a,b,c){this.q.push({s:a,n:b,a:c})},add:function(b,c){var d=this;b[c]=function(){if(d.loaded)throw'$.plugin > "'+d.url+'" didn\'t add the method "'+c+'".';d.queue(this,c,arguments);if(!d.loading){var a=d.preload();if(d.sync)return a}return this}},load:function(a){var b=this,c;g.trigger('loading',[b]);$.ajax({cache:b.cache,url:b.url,async:!b.sync,dataType:'script',success:function(){g.trigger('loaded',[b]);b.loaded=true;c=b.execute();if(b.caller){b.caller.missing--;c=b.caller.check()}}});return c},check:function(){if(!this.missing)return this.load()},preload:function(){var b=this,c,d;if(b.loading)return;b.loading=true;c=$(b.require).map(function(i,a){return g.registry[a]});b.missing=c.length;c.each(function(){if(this.loading)b.missing--;else{this.sync=b.sync||this.sync;this.caller=b;d=this.preload()}});return b.sync&&d!=null?d:b.check()},execute:function(){var a,b;while(b=this.q.shift())a=b.s[b.n].apply(b.s,b.a);return a},register:g.register};g.defaults={base:'',ext:'',cache:true,require:[]};g.registry={};$.each(['bind','unbind','trigger'],function(i,d){g[d]=g.prototype[d]=function(a,b,c){return $([this])[d](a,b,c)}});function h(e,f){$.each(e,function(b,c){var d=b=='$'?$:$.fn;if(typeof c=='string')f(d,c);else $.each(c,function(i,a){f(d,a)})})}})(jQuery);

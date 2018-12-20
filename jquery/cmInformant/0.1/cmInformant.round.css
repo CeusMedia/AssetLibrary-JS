@@ -1,0 +1,28 @@
+.messageBox.round {
+	background: none;
+	width: 250px;
+	position: fixed;
+	right: 10px;
+	bottom: 0px;
+	display: none;
+	border: none;
+	opacity: 0;
+	}
+.messageBox.round>.messageBoxHeading {
+	border-bottom: 1px solid gray;
+	background-color: #fdfebc;
+	border: 1px solid gray;
+	border-bottom: 0px;
+	-moz-border-radius-topleft: 10px;
+	-moz-border-radius-topright: 10px;
+	background-position: 10px 10px;
+	padding-top: 10px;
+	}
+.messageBox.round>.messageBoxContent {
+	background: #fdfebc;
+	border: 1px solid gray;
+	border-top: 0px;
+	-moz-border-radius-bottomleft: 10px;
+	-moz-border-radius-bottomright: 10px;
+	padding-bottom: 10px;
+	}

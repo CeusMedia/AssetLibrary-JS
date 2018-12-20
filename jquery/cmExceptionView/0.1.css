@@ -1,0 +1,47 @@
+dl.exception {
+	clear: left;
+	}
+dl.exception,
+dl.exception dl {
+	margin: 0px;
+	padding: 0px;
+	}
+dl.exception dl.exception {
+	margin-left: 1em;
+	}
+dl.exception dt,
+dl.exception dd {
+	font-family: monospace;
+	line-height: 1.5em;
+	font-size: 12px;
+	}
+dl.exception dt {
+	clear: left;
+	font-weight: bold;
+	float: left;
+	padding-right: 1em;
+	}
+dl.exception>dt {
+	min-width: 5em;
+	min-height: 1.5em;
+	}
+dl.exception dd {
+	font-weight: normal;
+	display: block;
+	min-height: 1.5em;
+	}
+dl.exception dd ol.trace {
+	padding: 0px;
+	margin: 0px;
+	margin-left: 5em;
+	}
+dl.exception dd blockquote {
+	margin: 0em 0.15em;
+	border-left: 2px solid #DDD;
+	padding-left: 1.5em;
+	}
+dl.exception dd blockquote span.type {
+	font-style: italic;
+	font-weight: normal;
+	color: gray;
+	}

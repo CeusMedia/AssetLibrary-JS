@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <title>Collapse Panel Demo</title>
+    <link rel="stylesheet" href="panel.default.css"/>
+    <link rel="stylesheet" href="panel.default.collapse.css"/>
+    <link rel="stylesheet" href="panel.apple.css"/>
+    <link rel="stylesheet" href="panel.apple.collapse.css"/>
+<!---->
+    <script src="../../1.2.3.pack.js"></script>
+    <script src="../../cookie.pack.js"></script>
+<!---->
+<!--
+    <script src="http://js.ceus-media.de/jquery/1.2.3.pack.js"></script>
+    <script src="http://js.ceus-media.de/jquery/cookie.pack.js"></script>
+-->
+    <script src="cmCollapsePanel.js"></script>
+  </head>
+  <body>
+    <h1>jQuery Plugin <em>cmCollapsePanel</em></h1>
+    <small>Version: 0.3</small><br/>
+    <a href="http://ceusmedia.com/demos/cmClasses/UI_HTML_CollapsePanel/">CeuS Media Demo <em>UI_HTML_CollapsePanel</em></a> for more information.<br/>
+
+    <div style="width: 250px">
+      <h4>Collapse Panel with Theme "default"</h4>
+      <div id="dyn1" class="panel collapsable default">
+        <div class="panelHead">title</div>
+        <div class="panelContent">content</div>
+      </div>
+      <br/>
+      <h4>Collapse Panel with Theme "apple"</h4>
+      <div id="dyn3" class="panel collapsable apple">
+        <div class="panelHead">title</div>
+        <div class="panelContent">content</div>
+        <div class="panelFoot"> </div>
+    </div>
+    <script>
+      $(document).ready(function(){
+        $(".panel.collapsable").cmCollapsePanel().show();
+        initPanelExpandedById("dyn1");
+        initPanelCollapsedById("dyn2");
+      });
+    </script>
+  </body>
+</html>

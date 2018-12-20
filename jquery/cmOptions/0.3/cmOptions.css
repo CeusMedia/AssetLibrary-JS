@@ -1,0 +1,18 @@
+select.cmOptions {
+	width: 200px;
+	background: none;
+	border: 1px solid gray;
+	padding: 1px;
+	font-size: 13px;
+	font-family: Arial;
+	font-weight: normal;
+	}
+select.cmOptions.loading {
+	background: none;
+	background-image: url(ajax-loader2.gif);
+	background-repeat: no-repeat;
+	background-position: 90% 50%;
+	}
+select.cmOptions option {
+	background: white;
+	}
